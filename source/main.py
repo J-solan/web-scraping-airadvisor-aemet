@@ -3,7 +3,7 @@ from selenium.common.exceptions import NoSuchElementException, ElementClickInter
 from bs4 import BeautifulSoup
 
 from selenium_interaction import selenium_interact, set_navigator
-from wscrapping_aemet import return_airport, extract_stats
+from wscraping_aemet import return_airport, extract_stats
 
 import argparse
 import re
@@ -53,7 +53,7 @@ def clean_last_week_data(df):
     
     return df_filtrado
 
-def wscrapping(ciudad_destino, test, headless, verbose):
+def wscraping(ciudad_destino, test, headless, verbose):
     verbose_result = []
     try:
         driver = set_navigator(headless)
@@ -71,7 +71,7 @@ def wscrapping(ciudad_destino, test, headless, verbose):
 
         verbose_result.append(f"Filas encontradas: {len(filas)}")
 
-        # Proceso de web scrapping con BeautifulSoup
+        # Proceso de web scraping con BeautifulSoup
         all_flights = []
 
         # Búsqueda del número de páginas a procesar
@@ -209,7 +209,7 @@ if __name__ == "__main__":
         action="store_true",              # convierte el flag en True si se pasa
         required=False,                   # no es obligatorio
         default=False,                    # valor por defecto
-        help="Mostrar el verbose para ver qué va haciendo el webscrapping."
+        help="Mostrar el verbose para ver qué va haciendo el webscraping."
     )
 
     args = parser.parse_args()
@@ -225,11 +225,11 @@ if __name__ == "__main__":
     if test:
         dfs = []
         for ciudad in ciudades:
-            df_ciudad = wscrapping(ciudad, test, headless, verbose)
+            df_ciudad = wscraping(ciudad, test, headless, verbose)
             dfs.append(df_ciudad)
         df = pd.concat(dfs, ignore_index=True)
         ruta_salida = "dataset/dataset.csv"
         df.to_csv(ruta_salida, index=False, encoding="utf-8")
     else:
         # Solo crea un csv con la ciudad indicada
-        wscrapping(ciudad_destino, test, headless, verbose)
+        wscraping(ciudad_destino, test, headless, verbose)

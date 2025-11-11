@@ -18,18 +18,18 @@ Este proyecto tiene como objetivo extraer y combinar información sobre **retras
 ---
 
 ## Estructura del proyecto
-
+```text
 main/
-├─ data/ # Carpeta donde se guardan los datasets generados (vacía inicialmente)
+├─ data/                      # Carpeta donde se guardan los datasets generados (vacía inicialmente)
 ├─ dataset/
-│ └─ dataset.csv # Archivo con el dataset final de ejemplo
+│ └─ dataset.csv              # Archivo con el dataset final de ejemplo
 ├─ source/
-│ ├─ main.py # Script principal de ejecución con el scraping de vuelos y la fusión con AEMET.
-│ ├─ dataset_concat.py # Script para fusionar los datasets
-│ ├─ selenium_interaction.py # Funciones de interacción con Selenium
-│ └─ wscapping_aemet.py # Scraping de datos meteorológicos de AEMET
-├─ requirements.txt # Librerías necesarias para ejecutar el proyecto
-
+│ ├─ main.py                  # Script principal de ejecución con el scraping de vuelos y la fusión con AEMET.
+│ ├─ dataset_concat.py        # Script para fusionar los datasets
+│ ├─ selenium_interaction.py  # Funciones de interacción con Selenium
+│ └─ wscapping_aemet.py       # Scraping de datos meteorológicos de AEMET
+├─ requirements.txt           # Librerías necesarias para ejecutar el proyecto
+```
 ---
 
 ## Uso
