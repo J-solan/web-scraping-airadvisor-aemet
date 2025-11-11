@@ -27,7 +27,7 @@ main/
 │ ├─ main.py # Script principal de ejecución con el scraping de vuelos y la fusión con AEMET.
 │ ├─ dataset_concat.py # Script para fusionar los datasets
 │ ├─ selenium_interaction.py # Funciones de interacción con Selenium
-│ └─ wscrapping_aemet.py # Scraping de datos meteorológicos de AEMET
+│ └─ wscapping_aemet.py # Scraping de datos meteorológicos de AEMET
 ├─ requirements.txt # Librerías necesarias para ejecutar el proyecto
 
 ---
